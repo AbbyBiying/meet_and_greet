@@ -1,0 +1,19 @@
+{
+  "name": "meet_and_greet",
+  "version": "0.0.0",
+  "homepage": "https://github.com/AbbyBiying/meet_and_greet",
+  "authors": [
+    "AbbyBiying <abbyzhangnyc@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

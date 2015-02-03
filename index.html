@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <div ng-app="AbbyIntroduction">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Meet & Greet</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="app.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+  <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.4.js"></script>
+  <script src="angular-animate.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <p>Welcome to Meet & Greet!</p>
+  <div ng-controller="GreetCtrl">
+    <p>Your Name :
+      <input type="text" ng-model="name" placeholder="Please enter name here">
+    </p>
+    <button ng-click='greeting()'>greet</button><br>
+    {{ greet }}
+    <!-- <p ng-if="name != nil">Nice to see you here {{ name }}!</p> -->
+
+
+    <p>Your note :
+      <input type="text" ng-model="usernote" placeholder="Please make some notes here">
+    </p>
+    <button ng-click='note()'>note</button><br>
+    {{ notebody }}
+    <!-- <p ng-if="note != nil">Here is your note: {{ note }}</p> -->
+  </div>
+
+  <h2>About me</h2>
+  <div ng-controller="collectionsCtrl">
+    <button ng-click="togsec('section1')">My bio</button></h2>
+    <div ng-if="showsec.section1">
+      A curiosity-driven web developer with an interest in art, design, technology and culture, I am passionate about writing clean code and I am committed to finding solutions to complex problems. I like swimming and playing basketball. I speak, write and read Cantonese, Mandarin and English. I also make paintings, videos, sound art and design. My favorite movies are Terminator 2: Judgment Day, Star Wars, and The Matrix.
+
+    </div>
+
+    <button ng-click="togsec('section2')">My Portfolio</button>
+
+    <div ng-if="showsec.section2">
+
+      <a href="http://www.openassembly.com/" target="_blank">
+        <h4>Open Assembly, built with Ruby with AngularJS on Rails, and Neo4j</h4>
+      </a>
+
+      <a href="http://www.abzexchange.com/" target="_blank">
+        <h4 class="oa">ABZ-Exchange, built with Ruby on Rails, JavaScript, and PostgreSQL</h4>
+      </a>
+
+      <a href="https://github.com/AbbyBiying/ABZ_EXCHANGE" target="_blank">
+        <p>Source Code</p>
+      </a>
+    </div>
+
+    <h3>My skills:</h3>
+    <button ng-click="togsec('section3')">Back-End</button>
+    <div ng-if="showsec.section3">
+      <p>Ruby on Rails, Sinatra, RSpec</p>
+    </div>
+
+    <button ng-click="togsec('section4')">Front-End</button></h3>
+    <div ng-if="showsec.section4">
+      <p>JavaScript, AngularJS, Sass, jQuery, Responsive, Bootstrap</p>
+    </div>
+
+    <button ng-click="togsec('section5')">Database</button></h3>
+    <div ng-if="showsec.section5">
+      <p>Neo4j, PostgreSQL, MongoDB</p>
+    </div>
+
+    <button ng-click="togsec('section6')">Others</button></h3>
+    <div ng-if="showsec.section6">
+      <p>Linux command line, regex, Git, GitHub, Photoshop, Illustrator</p>
+    </div>
+  </div>
+
+  <br>
+
+  <h1>Your question:</h1>
+  <div>Search question:
+    <input ng-model="searchText" placeholder="search question">
+  </div><br>
+
+  <div ng-controller="questionsCtrl">
+    <ul>
+      <li ng-repeat="question in questions |filter:searchText">
+        <input type="checkbox" ng-model="question.done">
+        <span class="done-{{question.done}}">{{question.text}}</span>
+      </li>
+    </ul>
+
+    <form class="form-question">
+      <input type="text" ng-model="formquestionText", placeholder="type your question here">
+
+      <div ng-show="formquestionText != nil">
+        <button ng-click="addQuestion()">Add a question</button>
+      </div>
+
+      <button ng-click="clearQuestion()">Clear selected question</span></button>
+    </form>
+
+    <p>
+      Total {{getTotalquestions()}} <span ng-pluralize count="questions.length" when="{'0':'question', '1':'question','other':'questions'}"></span>
+    </p>
+  </div>
+
+</body>
+
+</html>

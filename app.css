@@ -1,0 +1,14 @@
+body {
+  color: #262626;
+  background-color: #D9FFFD;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.pick-true{
+  text-decoration: underline;
+  color: red;
+}
+
