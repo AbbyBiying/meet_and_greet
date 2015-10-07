@@ -4,7 +4,13 @@ body {
   font-family: 'Open Sans', sans-serif;
   width: 100%;
   overflow-x: hidden;
-  margin: 0;
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 0 30px;
+}
+
+button {
+  color: #7746F1;
 }
 
 .pick-true{
