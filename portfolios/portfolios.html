@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="span3">
+    <div class="pa-sidebar well well-small">
+      <ul class="nav nav-list">
+        <li ng-class="{ active: $state.includes('portfolios.list') }"><a ui-sref="portfolios.list">Portfolios</a></li>
+        <li class="nav-header">Top portfolios</li>
+
+        <li ng-repeat="portfolio in portfolios | limitTo:2" ui-sref-active="active">
+          <a ui-sref="portfolios.detail({portfolioId:portfolio.id})">{{portfolio.name}}</a>
+        </li>
+      </ul>
+      <hr>
+      <button class="btn" ng-click="goToRandom()">Show random portfolio</button>
+
+      <div ui-view="menuTip" class="slide"></div>
+    </div>
+  </div>
+  <div ui-view class="span9 slide"></div>
+</div>

@@ -1,0 +1,6 @@
+<h2>Portfolios</h2>
+<ul>
+ <li ng-repeat="portfolio in portfolios">
+   <a ui-sref="portfolios.detail({portfolioId:portfolio.id})">{{portfolio.name}}</a>
+ </li>
+</ul>

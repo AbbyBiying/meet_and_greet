@@ -1,0 +1,71 @@
+$text-color: rgb(119,70,241);
+$main-background-color: rgb(89,214,178);
+$info-button-color: rgb(119,70,241);
+
+body {
+  color: rgba($text-color,1);
+  background-color: rgba($main-background-color,0.6);
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 0 30px;
+}
+
+button {
+  color: rgba($info-button-color,1);
+}
+
+.pick-true{
+  text-decoration: underline;
+  color: red;
+}
+.greet{
+
+}
+
+.about{
+
+}
+
+.review-form{
+
+}
+
+.painting{
+  img {
+    max-width:80%;
+  }
+  .statement{
+
+  }
+  .resume{
+
+  }
+}
+
+.slide.ng-leave {
+  position: relative;
+}
+.slide.ng-enter {
+  position: absolute;
+}
+.slide.ng-enter, .slide.ng-leave {
+  -webkit-transition: -webkit-transform 0.3s ease-in, opacity 0.3s ease-in;
+     -moz-transition: -moz-transform 0.3s ease-in, opacity 0.3s ease-in;
+       -o-transition: -o-transform 0.3s ease-in, opacity 0.3s ease-in;
+          transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+.slide.ng-enter, .slide.ng-leave.ng-leave-active {
+  -webkit-transform: scaleX(0.0001);
+       -o-transform: scaleX(0.0001);
+          transform: scaleX(0.0001);
+  opacity: 0;
+}
+.slide, .slide.ng-enter.ng-enter-active {
+  -webkit-transform: scaleX(1);
+       -o-transform: scaleX(1);
+          transform: scaleX(1);
+  opacity: 1;
+}

@@ -1,0 +1,16 @@
+<div ng-controller="messagesCtrl">
+<h2>Message me:</h2>
+  <form name="messageForm">
+    title: <input type="text" ng-model="titleText", placeholder="type your message title here" required>
+    body: <input type="text" ng-model="bodyText", placeholder="type your message body here" required>
+
+    <div ng-show="titleText != nil">
+      <div> message form is {{messageForm.$valid}} </div>
+      <button ng-click="addMessage()">Add a message</button>
+    </div>
+
+  </form>
+  <ul ng-repeat="message in messages">
+    <li><h2 message-text></h2></li>
+  </ul>
+</div>

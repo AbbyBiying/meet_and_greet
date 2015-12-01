@@ -1,0 +1,11 @@
+<div>
+  <h2>{{portfolio.name}}</h2>
+  <ul>
+    <li ng-repeat="item in portfolio.items">
+      <a ui-sref="portfolios.detail.item({itemId:item.id})">{{item.type}}</a>
+    </li>
+  </ul>
+  <div ui-view class="slide">
+    <small class="muted">Click on a portfolio item to view and/or edit it.</small>
+  </div>
+</div>

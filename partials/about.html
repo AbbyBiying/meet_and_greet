@@ -1,0 +1,53 @@
+<h2>About me</h2>
+<div class="about" ng-controller="collectionsCtrl">
+  <button ng-click="togsec('section1')">My bio</button></h2>
+  <div ng-if="showsec.section1">
+    {{bio}}
+  </div>
+<!--
+  <button ng-click="togsec('section2')">My Portfolio</button>
+
+  <div ng-if="showsec.section2">
+
+    <a href="http://www.openassembly.com/" target="_blank">
+      <h4>{{oa}}</h4>
+    </a>
+
+    <a href="http://www.abzexchange.com/" target="_blank">
+      <h4>{{abz}}</h4>
+    </a>
+
+    <a href="https://github.com/AbbyBiying/ABZ_EXCHANGE" target="_blank">
+      <p>Source Code</p>
+    </a> -->
+  <!-- </div> -->
+
+  <h3>My skills:</h3>
+  <button ng-click="togsec('section3')">Back-End</button>
+  <div ng-if="showsec.section3">
+  <p>{{backend}}</p>
+  </div>
+
+  <button ng-click="togsec('section4')">Front-End</button>
+  <div ng-if="showsec.section4">
+  <p>{{frontend}}</p>
+  </div>
+
+  <button ng-click="togsec('section5')">Database</button>
+  <div ng-if="showsec.section5">
+  <p>{{database}}</p>
+  </div>
+
+  <button ng-click="togsec('section6')">Others</button>
+  <div ng-if="showsec.section6">
+  <p>{{others}}</p>
+</div>
+
+<ul>
+ <li><a href="https://github.com/AbbyBiying/meet_and_greet">Source Code For this site</a></li>
+ <li><a href="https://github.com/AbbyBiying">GitHub</a></li>
+ <li><a href="https://www.linkedin.com/in/abbybzhang">Linkedin</a></li>
+ <li><a href="/assets/ABZ_CV.pdf">Artist CV</a></li>
+ <li><a href="http://abbybiying.github.io/">Personal Website</a></li>
+</ul>
+

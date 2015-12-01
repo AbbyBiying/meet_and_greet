@@ -1,20 +1,21 @@
 body {
-  color: #262626;
-  background-color: #D9FFFD;
+  color: #7746f1;
+  background-color: rgba(89, 214, 178, 0.6);
   font-family: 'Open Sans', sans-serif;
   width: 100%;
   overflow-x: hidden;
   margin: 50px auto;
   max-width: 600px;
-  padding: 0 30px;
-}
+  padding: 0 30px; }
 
 button {
-  color: #7746F1;
-}
+  color: #7746f1; }
 
-.pick-true{
+.pick-true {
   text-decoration: underline;
-  color: red;
-}
+  color: red; }
 
+.painting img {
+  max-width: 80%; }
+
+/*# sourceMappingURL=app.css.map */

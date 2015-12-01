@@ -8,92 +8,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Meet & Greet</title>
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
-  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
-  <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"> -->
+
   <link rel="stylesheet" href="app.css">
-  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
-  <!-- <link rel="stylesheet" href="animate.min.css"> -->
-  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"> -->
 
   <script type="text/javascript" src="processing.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js">
+  </script>
   <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
   <script type="text/javascript" src="app.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
   <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.4.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <script src="/utils/utils-service.js"></script>
+  <script src="/portfolios/portfolios-service.js"></script>
+  <script src="/portfolios/portfolios.js"></script>
+  <script src="/router.js"></script>
+  <script src="/ctrl/collections.js"></script>
+  <script src="/ctrl/messages.js"></script>
+  <script src="/ctrl/greet.js"></script>
+  <script src="/directive/messagetext.js"></script>
 
-</head>
+</head> 
 
-<body>
-  <p>Welcome to Meet & Greet!</p>
+<body> 
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" ui-sref="home">ABZ</a>
+        <ul class="nav">
+          <li ng-class="{active: $state.includes('portfolios')}"><a ui-sref="portfolios.list">Portfolios</a></li>
+          <li ui-sref-active="active"><a ui-sref="about">About</a></li>
+          <li ui-sref-active="active"><a ui-sref="messages">Message me</a></li>
+        </ul>
+        <p ui-view="hint" class="navbar-text pull-right"></p>
+      </div>
+    </div>
+  </div>
 
-  <canvas data-processing-sources='mixing.pde'></canvas>
+  <div ui-view class="container slide" style="padding-top: 80px;"></div>
 
-  <div ng-controller="GreetCtrl">
-    <p>Your Name :
+  <hr>
+  <pre>
+    $state = {{$state.current.name}}
+    $stateParams = {{$stateParams}}
+    $state full url = {{ $state.$current.url.source }}
+  </pre>
+
+  <div>
+    <h2>Shake hand 握手</h2>
+    <button>art gallery</button>
+    <button>your name</button>
+  </div>
+
+  <div class="resume" truncate="resume" turls="true" tlength="200"></div>
+  <div id="demo"></div>
+
+  <!-- <canvas data-processing-sources='mixing.pde'></canvas> -->
+  <a ui-sref="state1">State 1</a>
+  <a ui-sref="state2">State 2</a>
+  <div class="greet" ng-controller="greetCtrl">
+    <p>Your Name:
       <input type="text" ng-model="name" placeholder="Please enter name here">
     </p>
     <button ng-click='greeting()'>greet</button><br>
     {{ greet }}
 
-    <p>Your note :
+    <p>Your note:
       <input type="text" ng-model="usernote" placeholder="Please make some notes here">
     </p>
     <button ng-click='note()'>note</button><br>
     {{ notebody }}
   </div>
 
-  <h2>About me</h2>
-  <div ng-controller="collectionsCtrl">
-    <button ng-click="togsec('section1')">My bio</button></h2>
-    <div ng-if="showsec.section1">
-      A curiosity-driven web developer with an interest in art, design, technology and culture, I am passionate about writing clean code and I am committed to finding solutions to complex problems. I like swimming and playing basketball. I speak, write and read Cantonese, Mandarin and English. I also make paintings, videos, sound art and design. My favorite movies are Terminator 2: Judgment Day, Star Wars, and The Matrix.
+  <br>
+  <div ng-controller="artsCtrl">
+    <div class="painting" >
+      <button ng-click="togmaterial('artiststatement')">Artist Statement</button>
+      <div class="statement" ng-if="showmaterial.artiststatement">
+        <p>{{statement}}</p>
+      </div>
 
-    </div>
+      <div class="cv">
+        cv:<div ng-src=" {{ 'assets' + cv }}"/>
+      </div>
 
-    <button ng-click="togsec('section2')">My Portfolio</button>
+      <button ng-click="showart()">See my painting</button>
+      <div ng-repeat="painting in paintings">
+        <img ng-src="assets/{{painting.image}}"/>
+        <p>title: {{painting.title}}</p>
+        <p>media: {{painting.media}}</p>
+        <p>size: {{painting.size}}</p>
+        <p>date: {{painting.date}}</p>
+        <div ng-if="painting.reviews.length > 0">
+          <button ng-click="togmaterial('review')">Review</button>
+        </div>
 
-    <div ng-if="showsec.section2">
+        <form class="review-form" name="reviewForm" ng-submit="reviewForm.$valid && addReview(painting)" novalidate>
+          <select ng-model="review.stars" required>
+            <option value="1">1 star</option> 
+            <option value="2">2 stars</option> 
+            <option value="3">3 stars</option> 
+            <option value="4">4 stars</option> 
+            <option value="5">5 stars</option> 
+          </select>
 
-      <a href="http://www.openassembly.com/" target="_blank">
-        <h4>Open Assembly, built with Ruby with AngularJS on Rails, and Neo4j</h4>
-      </a>
+          <textarea ng-model="review.body" required></textarea>
+          <label>by:</label>
+          <textarea ng-model="review.author" required></textarea>
 
-      <a href="http://www.abzexchange.com/" target="_blank">
-        <h4 class="oa">ABZ-Exchange, built with Ruby on Rails, JavaScript, and PostgreSQL</h4>
-      </a>
+          <div> review form is {{reviewForm.$valid}} </div>
+          <input type="submit" value="Submit" /> 
 
-      <a href="https://github.com/AbbyBiying/ABZ_EXCHANGE" target="_blank">
-        <p>Source Code</p>
-      </a>
-    </div>
-
-    <h3>My skills:</h3>
-    <button ng-click="togsec('section3')">Back-End</button>
-    <div ng-if="showsec.section3">
-      <p>Ruby on Rails, Sinatra, RSpec</p>
-    </div>
-
-    <button ng-click="togsec('section4')">Front-End</button></h3>
-    <div ng-if="showsec.section4">
-      <p>JavaScript, AngularJS, Sass, jQuery, Responsive, Bootstrap</p>
-    </div>
-
-    <button ng-click="togsec('section5')">Database</button></h3>
-    <div ng-if="showsec.section5">
-      <p>Neo4j, PostgreSQL, MongoDB</p>
-    </div>
-
-    <button ng-click="togsec('section6')">Others</button></h3>
-    <div ng-if="showsec.section6">
-      <p>Linux command line, regex, Git, GitHub, Photoshop, Illustrator</p>
+          <div ng-if="showmaterial.review">
+            <blockquote ng-repeat="review in painting.reviews"> 
+              <p><b>Stars: {{review.stars}}</b> </p>
+              <p>{{review.body}} </p>
+              <p><cite>by: {{review.author}}</cite> </p>
+            </blockquote> 
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-
-  <br>
 
   <h1>Your question:</h1>
   <div>Search question:
