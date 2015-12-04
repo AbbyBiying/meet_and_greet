@@ -1,6 +1,59 @@
 <hr>
-<h4>{{item.type}} <button class="btn" ng-click="edit()">Edit</button></h4>
+<!-- <h4>{{item.type}}
+--><!-- <button class="btn" ng-click="edit()">Edit</button></h4> -->
 <div>{{item.value}}</div>
-<div>{{item.website}}</div>
+<!-- <h1>{{item.artworks.title}}</h1>
+<img ng-src="assets/{{item.artworks.image}}"/>
+ -->
+<!--        <button class="btn" ng-click="goToRandom()">Show random portfolio</button>
+ -->
+<div ng-controller="artsCtrl">
+  <div class="painting" >
+    <button ng-click="togmaterial('artiststatement')">Artist Statement</button>
+    <div class="statement" ng-if="showmaterial.artiststatement">
+      <p>{{statement}}</p>
+    </div>
+    <a href="/assets/ABZ_CV.pdf" target="_blank">Artist CV</a>
 
 
+  </div>
+</div>
+<div ng-repeat="artwork in item.artworks"> 
+  <img ng-src="assets/{{artwork.image}}"/>
+  <div>{{artwork.title}}</div>
+  <div>{{artwork.media}}</div>
+  <div>{{artwork.date}}</div>
+  <div>{{artwork.size}}</div>
+
+  <div ng-controller="artsCtrl">
+
+    <div ng-if="artwork.reviews.length > 0">
+      <button ng-click="togmaterial('review')">Review</button>
+    </div>
+
+    <form class="review-form" name="reviewForm" ng-submit="reviewForm.$valid && addReview(artwork)" novalidate>
+      <select ng-model="review.stars" required>
+        <option value="1">1 star</option> 
+        <option value="2">2 stars</option> 
+        <option value="3">3 stars</option> 
+        <option value="4">4 stars</option> 
+        <option value="5">5 stars</option> 
+      </select>
+
+      <textarea ng-model="review.body" required></textarea>
+      <label>by:</label>
+      <textarea ng-model="review.author" required></textarea>
+
+      <div> review form is {{reviewForm.$valid}} </div>
+      <input type="submit" value="Submit" /> 
+
+      <div ng-if="showmaterial.review">
+        <blockquote ng-repeat="review in artwork.reviews"> 
+          <p><b>Stars: {{review.stars}}</b> </p>
+          <p>{{review.body}} </p>
+          <p><cite>by: {{review.author}}</cite> </p>
+        </blockquote> 
+      </div>
+    </form>
+  </div>
+</div>

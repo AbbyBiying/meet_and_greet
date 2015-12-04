@@ -18,7 +18,6 @@
   <script type="text/javascript" src="app.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
-  <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.4.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script src="/utils/utils-service.js"></script>
   <script src="/portfolios/portfolios-service.js"></script>
@@ -27,8 +26,10 @@
   <script src="/ctrl/collections.js"></script>
   <script src="/ctrl/messages.js"></script>
   <script src="/ctrl/greet.js"></script>
+  <script src="/ctrl/arts.js"></script>
+  <script src="/ctrl/questions.js"></script>
   <script src="/directive/messagetext.js"></script>
-
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
 </head> 
 
 <body> 
@@ -65,13 +66,11 @@
   <div id="demo"></div>
 
   <!-- <canvas data-processing-sources='mixing.pde'></canvas> -->
-  <a ui-sref="state1">State 1</a>
-  <a ui-sref="state2">State 2</a>
   <div class="greet" ng-controller="greetCtrl">
     <p>Your Name:
       <input type="text" ng-model="name" placeholder="Please enter name here">
     </p>
-    <button ng-click='greeting()'>greet</button><br>
+    <button class="toggle" ng-click='greeting()'>greet</button><br>
     {{ greet }}
 
     <p>Your note:
@@ -82,55 +81,6 @@
   </div>
 
   <br>
-  <div ng-controller="artsCtrl">
-    <div class="painting" >
-      <button ng-click="togmaterial('artiststatement')">Artist Statement</button>
-      <div class="statement" ng-if="showmaterial.artiststatement">
-        <p>{{statement}}</p>
-      </div>
-
-      <div class="cv">
-        cv:<div ng-src=" {{ 'assets' + cv }}"/>
-      </div>
-
-      <button ng-click="showart()">See my painting</button>
-      <div ng-repeat="painting in paintings">
-        <img ng-src="assets/{{painting.image}}"/>
-        <p>title: {{painting.title}}</p>
-        <p>media: {{painting.media}}</p>
-        <p>size: {{painting.size}}</p>
-        <p>date: {{painting.date}}</p>
-        <div ng-if="painting.reviews.length > 0">
-          <button ng-click="togmaterial('review')">Review</button>
-        </div>
-
-        <form class="review-form" name="reviewForm" ng-submit="reviewForm.$valid && addReview(painting)" novalidate>
-          <select ng-model="review.stars" required>
-            <option value="1">1 star</option> 
-            <option value="2">2 stars</option> 
-            <option value="3">3 stars</option> 
-            <option value="4">4 stars</option> 
-            <option value="5">5 stars</option> 
-          </select>
-
-          <textarea ng-model="review.body" required></textarea>
-          <label>by:</label>
-          <textarea ng-model="review.author" required></textarea>
-
-          <div> review form is {{reviewForm.$valid}} </div>
-          <input type="submit" value="Submit" /> 
-
-          <div ng-if="showmaterial.review">
-            <blockquote ng-repeat="review in painting.reviews"> 
-              <p><b>Stars: {{review.stars}}</b> </p>
-              <p>{{review.body}} </p>
-              <p><cite>by: {{review.author}}</cite> </p>
-            </blockquote> 
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 
   <h1>Your question:</h1>
   <div>Search question:
@@ -145,12 +95,11 @@
       </li>
     </ul>
 
-    <form class="form-question">
-      <input type="text" ng-model="formquestionText", placeholder="type your question here">
+    <form name="questionForm" class="form-question" novalidate ng-submit="questionForm.$valid && addQuestion()">
+      <input type="text" ng-model="formquestionText", placeholder="type your question here" required>
 
-      <div ng-show="formquestionText != nil">
-        <button ng-click="addQuestion()">Add a question</button>
-      </div>
+      <div>question form is {{questionForm.$valid}} </div>
+      <input type="submit" value="Submit" /> 
 
       <button ng-click="clearQuestion()">Clear selected question</span></button>
     </form>
