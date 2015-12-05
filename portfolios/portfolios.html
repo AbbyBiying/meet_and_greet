@@ -6,7 +6,7 @@
         <li class="nav-header">Top portfolios</li>
 
         <li ng-repeat="portfolio in portfolios | limitTo:2" ui-sref-active="active">
-          <a ui-sref="portfolios.detail({portfolioId:portfolio.id})">{{portfolio.name}}</a>
+          <a ui-sref="portfolios.detail({portfolioId:portfolio.id})">    {{portfolio.name}}</a>
         </li>
       </ul>
       <hr>

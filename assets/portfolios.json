@@ -6,13 +6,13 @@
       "items":[
         {
           "id":"a",
-          "type":"work",
+          "type":"Work Project",
           "value":"Open Assembly",
           "website":"https://www.openassembly.com"
         },
         {
           "id":"B",
-          "type":"hobby",
+          "type":"Hobby Project",
           "value":"ABZ EXCHANGE",
           "website":"http://www.abzexchange.com/home"
         }
@@ -24,7 +24,7 @@
       "items":[
         {
           "id":"a",
-          "type":"Fine Art",
+          "type":"FineArt",
           "value":"paintings",
           "artworks":[
             {
