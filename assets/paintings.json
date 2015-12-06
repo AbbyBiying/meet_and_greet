@@ -1,1 +1,233 @@
-{  "paintings": [    {      "title": "Alienation No.1",      "date": "2012",      "media": "Acrylic on paper",      "size": "18 x 24 inches (45 x 60 cm)",      "image": "Alienation_No_1.jpg",      "reviews": [        {          "stars": 5,          "body": "I love this painting!",          "author": "Abby"        },        {          "stars": 4,          "body": "I like the color!",          "author": "Pam"        }      ]    },    {      "title": "Alienation No.2",      "date": "2012",      "media": "Acrylic on paper",      "size": "23 x 18 inches (59 x 45 cm)",      "image": "Alienation_No_2.jpg",      "reviews": []    },    {      "title": "Alienation No.5",      "date": "2012",      "media": "Acrylic on paper",      "size": "16 x 22 inches (40 x 57 cm)",      "image": "Alienation_No_5.jpg",      "reviews": []    },    {      "title": "Alienation No.7",      "date": "2012",      "media": "Acrylic on paper",      "size": "24 x 18 inches (60 x 45.5 cm)",      "image": "Alienation_No_7.jpg",      "reviews": []    },    {      "title": "Alienation No.8",      "date": "2012",      "media": "Acrylic on paper",      "size": "24 x 18 inches (60 x 45.5 cm)",      "image": "Alienation_No_8.jpg",      "reviews": []    },    {      "title": "Alienation No.9",      "date": "2012",      "media": "Acrylic on paper",      "size": "26 x 20 inches (66 x 51 cm)",      "image": "Alienation_No_9.jpg",      "reviews": []    },    {      "title": "Alienation No.11",      "date": "2012",      "media": "Acrylic on paper",      "size": "22 x 18 inches (57 x 46 cm)",      "image": "Alienation_No_11.jpg",      "reviews": []    },    {      "title": "Alienation No.12",      "date": "2012",      "media": "Acrylic on paper",      "size": "31 x 22 inches (78 x 55 cm)",      "image": "Alienation_No_12.jpg",      "reviews": []    },    {      "title": "Alienation No.13",      "date": "2012",      "media": "Acrylic on paper",      "size": "31 x 22 inches (78 x 55 cm)",      "image": "Alienation_No_13.jpg",      "reviews": []    },    {      "title": "Alienation No.14",      "date": "2012",      "media": "Acrylic on paper",      "size": "31 x 22 inches (78 x 55 cm)",      "image": "Alienation_No_14.jpg",      "reviews": []    },    {      "title": "Alienation No.15",      "date": "2012",      "media": "Acrylic on paper",      "size": "31 x 22 inches (78 x 55 cm)",      "image": "Alienation_No_15.jpg",      "reviews": []    },    {      "title": "The Biggest Blue",      "date": "2011",      "media": "Oil on canvas",      "size": "72 x 72 inches (182 x 182 cm)",      "image": "The_Biggest_Blue.jpg",      "reviews": []    },    {      "title": "Tunnel",      "date": "2011",      "media": "Oil on canvas",      "size": "57 x 57 inches (145 x 146 cm)",      "image": "Tunnel.jpg",      "reviews": []    },    {      "title": "Two",      "date": "2011",      "media": "Oil on canvas",      "size": "36 x 36 inches (91 x 91 cm)",      "image": "Two.jpg",      "reviews": []    },    {      "title": "The Harder You Fall",      "date": "2011",      "media": "Oil on canvas",      "size": "43 x 48 inches (109 x 122 cm)",      "image": "The_Harder_You_Fall.jpg",      "reviews": []    },    {      "title": "Smoke",      "date": "2011",      "media": "Oil on canvas",      "size": "48 x 49 inches (123 x 125 cm)",      "image": "Smoke.jpg",      "reviews": []    },    {      "title": "Sick",      "date": "2011",      "media": "Oil on canvas",      "size": "24 x 24 inches (61 x 61 cm)",      "image": "Sick.jpg",      "reviews": []    },    {      "title": "Big Dream",      "date": "2011",      "media": "Oil on canvas",      "size": "22 x 21 inches (56 x 53 cm)",      "image": "Big_Dream.jpg",      "reviews": []    },    {      "title": "Parking Lot",      "date": "2011",      "media": "Oil on canvas",      "size": "24 x 28 inches (61 x 71 cm)",      "image": "Parking_Lot.jpg",      "reviews": []    },    {      "title": "Fire Work No.1",      "date": "2013",      "media": "Oil on canvas",      "size": "31 1/2 x 42 1/2 inches (107 x 80 cm)",      "image": "Firework_No_1.jpg",      "reviews": []    },    {      "title": "Fire Work No.2",      "date": "2013",      "media": "Oil on canvas",      "size": "31 1/2 x 42 1/2 inches (107 x 80 cm)",      "image": "Firework_No_2.jpg",      "reviews": []    },    {      "title": "Eye",      "date": "2008",      "media": "Oil on canvas",      "size": "16 x 20 inches",      "image": "eye.jpg",      "reviews": []    }  ]}
+{
+   "paintings":[
+      {
+         "title":"Alienation No.1",
+         "date":"2012",
+         "media":"Acrylic on paper",
+         "size":"18 x 24 inches (45 x 60 cm)",
+         "image":"Alienation_No_1.jpg",
+         "reviews":[
+            {
+               "stars":5,
+               "body":"I love this painting!",
+               "author":"Abby"
+            },
+            {
+               "stars":4,
+               "body":"I like the color!",
+               "author":"Pam"
+            }
+         ]
+      },
+      {
+         "title":"Alienation No.2",
+         "date":"2012",
+         "media":"Acrylic on paper",
+         "size":"23 x 18 inches (59 x 45 cm)",
+         "image":"Alienation_No_2.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Alienation No.5",
+         "date":"2012",
+         "media":"Acrylic on paper",
+         "size":"16 x 22 inches (40 x 57 cm)",
+         "image":"Alienation_No_5.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Alienation No.7",
+         "date":"2012",
+         "media":"Acrylic on paper",
+         "size":"24 x 18 inches (60 x 45.5 cm)",
+         "image":"Alienation_No_7.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Alienation No.8",
+         "date":"2012",
+         "media":"Acrylic on paper",
+         "size":"24 x 18 inches (60 x 45.5 cm)",
+         "image":"Alienation_No_8.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Alienation No.9",
+         "date":"2012",
+         "media":"Acrylic on paper",
+         "size":"26 x 20 inches (66 x 51 cm)",
+         "image":"Alienation_No_9.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Alienation No.11",
+         "date":"2012",
+         "media":"Acrylic on paper",
+         "size":"22 x 18 inches (57 x 46 cm)",
+         "image":"Alienation_No_11.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Alienation No.12",
+         "date":"2012",
+         "media":"Acrylic on paper",
+         "size":"31 x 22 inches (78 x 55 cm)",
+         "image":"Alienation_No_12.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Alienation No.13",
+         "date":"2012",
+         "media":"Acrylic on paper",
+         "size":"31 x 22 inches (78 x 55 cm)",
+         "image":"Alienation_No_13.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Alienation No.14",
+         "date":"2012",
+         "media":"Acrylic on paper",
+         "size":"31 x 22 inches (78 x 55 cm)",
+         "image":"Alienation_No_14.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Alienation No.15",
+         "date":"2012",
+         "media":"Acrylic on paper",
+         "size":"31 x 22 inches (78 x 55 cm)",
+         "image":"Alienation_No_15.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"The Biggest Blue",
+         "date":"2011",
+         "media":"Oil on canvas",
+         "size":"72 x 72 inches (182 x 182 cm)",
+         "image":"The_Biggest_Blue.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Tunnel",
+         "date":"2011",
+         "media":"Oil on canvas",
+         "size":"57 x 57 inches (145 x 146 cm)",
+         "image":"Tunnel.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Two",
+         "date":"2011",
+         "media":"Oil on canvas",
+         "size":"36 x 36 inches (91 x 91 cm)",
+         "image":"Two.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"The Harder You Fall",
+         "date":"2011",
+         "media":"Oil on canvas",
+         "size":"43 x 48 inches (109 x 122 cm)",
+         "image":"The_Harder_You_Fall.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Smoke",
+         "date":"2011",
+         "media":"Oil on canvas",
+         "size":"48 x 49 inches (123 x 125 cm)",
+         "image":"Smoke.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Sick",
+         "date":"2011",
+         "media":"Oil on canvas",
+         "size":"24 x 24 inches (61 x 61 cm)",
+         "image":"Sick.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Big Dream",
+         "date":"2011",
+         "media":"Oil on canvas",
+         "size":"22 x 21 inches (56 x 53 cm)",
+         "image":"Big_Dream.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Parking Lot",
+         "date":"2011",
+         "media":"Oil on canvas",
+         "size":"24 x 28 inches (61 x 71 cm)",
+         "image":"Parking_Lot.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Fire Work No.1",
+         "date":"2013",
+         "media":"Oil on canvas",
+         "size":"31 1/2 x 42 1/2 inches (107 x 80 cm)",
+         "image":"Firework_No_1.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Fire Work No.2",
+         "date":"2013",
+         "media":"Oil on canvas",
+         "size":"31 1/2 x 42 1/2 inches (107 x 80 cm)",
+         "image":"Firework_No_2.jpg",
+         "reviews":[
+
+         ]
+      },
+      {
+         "title":"Eye",
+         "date":"2008",
+         "media":"Oil on canvas",
+         "size":"16 x 20 inches",
+         "image":"eye.jpg",
+         "reviews":[
+
+         ]
+      }
+   ]
+}
