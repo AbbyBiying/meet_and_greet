@@ -26,28 +26,7 @@
           "id":"a",
           "type":"FineArt",
           "value":"paintings",
-          "artworks":[
-            {
-              "title": "Alienation No.1",
-              "date": "2012",
-              "media": "Acrylic on paper",
-              "size": "18 x 24 inches (45 x 60 cm)",
-              "image": "Alienation_No_1.jpg",
-              "reviews": [
-                {
-                  "stars": 5,
-                  "body": "I love this painting!",
-                  "author": "Abby"
-                },
-                {
-                  "stars": 4,
-                  "body": "I like the color!",
-                  "author": "Pam"
-                }
-              ]
-            }
-
-          ]
+          "artworks":[]
         }
       ]
     }

@@ -16,7 +16,7 @@ angular.module('AbbyIntroduction.portfolios', ['ui.router'])
           },
 
           controller: ['$scope', '$state', 'portfolios', 'utils',
-            function (  $scope,   $state,   portfolios,   utils) {
+            function (  $scope,   $state,  portfolios,   utils) {
               $scope.portfolios = portfolios;
 
               $scope.goToRandom = function () {
