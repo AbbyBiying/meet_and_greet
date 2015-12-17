@@ -1,12 +1,17 @@
+html {
+/*  background-color: rgba(89, 214, 178, 0.6);
+*/}
+
 body {
   color: #7746f1;
-  background-color: rgba(89, 214, 178, 0.6);
   font-family: 'Open Sans', sans-serif;
-  width: 100%;
-  overflow-x: hidden;
+  padding: 0 30px;
+}
+
+.main-container {
   margin: 50px auto;
   max-width: 600px;
-  padding: 0 30px; }
+}
 
 button {
   color: #7746f1; }
@@ -43,3 +48,26 @@ img {
   opacity: 1; }
 
 /*# sourceMappingURL=app.css.map */
+
+.buttondemoBasicUsage section {
+  border-radius: 3px;
+  text-align: center;
+  margin: 1em;
+  position: relative !important;
+  padding-bottom: 10px; }
+
+.buttondemoBasicUsage md-content {
+  margin-right: 7px; }
+
+.buttondemoBasicUsage section .md-button {
+  margin-top: 16px;
+  margin-bottom: 16px; }
+
+.buttondemoBasicUsage .label {
+  position: absolute;
+  bottom: 5px;
+  left: 7px;
+  font-size: 14px;
+  opacity: 0.54;
+}
+

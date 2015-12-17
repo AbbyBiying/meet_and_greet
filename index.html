@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <div ng-app="AbbyIntroduction">
 <head>
 
   <meta charset="utf-8">
@@ -9,30 +8,40 @@
 
   <title>Meet & Greet</title>
 
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
   <link rel="stylesheet" href="app.css">
 
-  <script type="text/javascript" src="processing.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js">
-  </script>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+  <!-- My App Library -->
   <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
   <script type="text/javascript" src="app.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-  <script src="/utils/utils-service.js"></script>
-  <script src="/portfolios/portfolios-service.js"></script>
-  <script src="/portfolios/portfolios.js"></script>
-  <script src="/routes.js"></script>
-  <script src="/ctrl/collections.js"></script>
-  <script src="/ctrl/messages.js"></script>
-  <script src="/ctrl/greet.js"></script>
-  <script src="/ctrl/arts.js"></script>
-  <script src="/ctrl/questions.js"></script>
-  <script src="/directive/messagetext.js"></script>
-  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+  <script type="text/javascript" src="/utils/utils-service.js"></script>
+  <script type="text/javascript" src="/portfolios/portfolios-service.js"></script>
+  <script type="text/javascript" src="/portfolios/portfolios.js"></script>
+  <script type="text/javascript" src="/routes.js"></script>
+  <script type="text/javascript" src="/ctrl/collections.js"></script>
+  <script type="text/javascript" src="/ctrl/messages.js"></script>
+  <script type="text/javascript" src="/ctrl/greet.js"></script>
+  <script type="text/javascript" src="/ctrl/arts.js"></script>
+  <script type="text/javascript" src="/ctrl/questions.js"></script>
+  <script type="text/javascript" src="/directive/messagetext.js"></script>
+
 </head> 
 
 <body> 
+
+<div ng-app="AbbyIntroduction" class="main-container">
+
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -56,58 +65,59 @@
     $state full url = {{ $state.$current.url.source }}
   </pre>
 
-  <div>
+  <div class="buttondemoBasicUsage">
     <h2>Shake hand 握手</h2>
-    <button>art gallery</button>
-    <button>your name</button>
+    <md-button class="md-raised md-primary">art gallery</md-button>
+    <md-button class="md-raised md-primary">your name</md-button>
+
+    <div class="resume" truncate="resume" turls="true" tlength="200"></div>
+    <div id="demo"></div>
+
+    <!-- <canvas data-processing-sources='mixing.pde'></canvas> -->
+    <div class="greet" ng-controller="greetCtrl">
+      <p>Your Name:
+        <input type="text" ng-model="name" placeholder="Please enter name here">
+      </p>
+      <md-button class="md-raised md-primary toggle" ng-click='greeting()'>greet</md-button><br>
+      {{ greet }}
+
+      <p>Your note:
+        <input type="text" ng-model="usernote" placeholder="Please make some notes here">
+      </p>
+      <md-button class="md-raised md-primary" ng-click='note()'>note</md-button><br>
+      {{ notebody }}
+    </div>
+
+    <br>
+
+    <h1>Your question:</h1>
+    <div>Search question:
+      <input ng-model="searchText" placeholder="search question">
+    </div><br>
+
+    <div ng-controller="questionsCtrl">
+      <ul>
+        <li ng-repeat="question in questions |filter:searchText">
+          <input type="checkbox" ng-model="question.done">
+          <span class="done-{{question.done}}">{{question.text}}</span>
+        </li>
+      </ul>
+
+      <form name="questionForm" class="form-question" novalidate ng-submit="questionForm.$valid && addQuestion()">
+        <input type="text" ng-model="formquestionText", placeholder="type your question here" required>
+
+        <div>question form is {{questionForm.$valid}} </div>
+        <input type="submit" value="Submit" /> 
+
+        <md-button class="md-raised md-primary" ng-click="clearQuestion()">Clear selected question</span></md-button>
+      </form>
+
+      <p>
+        Total {{getTotalquestions()}} <span ng-pluralize count="questions.length" when="{'0':'question', '1':'question','other':'questions'}"></span>
+      </p>
+    </div>
   </div>
-
-  <div class="resume" truncate="resume" turls="true" tlength="200"></div>
-  <div id="demo"></div>
-
-  <!-- <canvas data-processing-sources='mixing.pde'></canvas> -->
-  <div class="greet" ng-controller="greetCtrl">
-    <p>Your Name:
-      <input type="text" ng-model="name" placeholder="Please enter name here">
-    </p>
-    <button class="toggle" ng-click='greeting()'>greet</button><br>
-    {{ greet }}
-
-    <p>Your note:
-      <input type="text" ng-model="usernote" placeholder="Please make some notes here">
-    </p>
-    <button ng-click='note()'>note</button><br>
-    {{ notebody }}
-  </div>
-
-  <br>
-
-  <h1>Your question:</h1>
-  <div>Search question:
-    <input ng-model="searchText" placeholder="search question">
-  </div><br>
-
-  <div ng-controller="questionsCtrl">
-    <ul>
-      <li ng-repeat="question in questions |filter:searchText">
-        <input type="checkbox" ng-model="question.done">
-        <span class="done-{{question.done}}">{{question.text}}</span>
-      </li>
-    </ul>
-
-    <form name="questionForm" class="form-question" novalidate ng-submit="questionForm.$valid && addQuestion()">
-      <input type="text" ng-model="formquestionText", placeholder="type your question here" required>
-
-      <div>question form is {{questionForm.$valid}} </div>
-      <input type="submit" value="Submit" /> 
-
-      <button ng-click="clearQuestion()">Clear selected question</span></button>
-    </form>
-
-    <p>
-      Total {{getTotalquestions()}} <span ng-pluralize count="questions.length" when="{'0':'question', '1':'question','other':'questions'}"></span>
-    </p>
-  </div>
+</div>
 
 </body>
 

@@ -1,6 +1,7 @@
 <h2>About me</h2>
-<div class="about" ng-controller="collectionsCtrl">
-  <button ng-click="togsec('section1')">My bio</button></h2>
+<div class="about" class="buttondemoBasicUsage"
+ng-controller="collectionsCtrl">
+  <md-button class="md-raised md-primary" ng-click="togsec('section1')">My bio</md-button></h2>
   <div ng-if="showsec.section1">
     {{bio}}
   </div>
@@ -23,22 +24,22 @@
   <!-- </div> -->
 
   <h3>My skills:</h3>
-  <button ng-click="togsec('section3')">Back-End</button>
+  <md-button class="md-raised md-primary" ng-click="togsec('section3')">Back-End</md-button>
   <div ng-if="showsec.section3">
   <p>{{backend}}</p>
   </div>
 
-  <button ng-click="togsec('section4')">Front-End</button>
+  <md-button class="md-raised md-primary" ng-click="togsec('section4')">Front-End</md-button>
   <div ng-if="showsec.section4">
   <p>{{frontend}}</p>
   </div>
 
-  <button ng-click="togsec('section5')">Database</button>
+  <md-button class="md-raised md-primary" ng-click="togsec('section5')">Database</md-button>
   <div ng-if="showsec.section5">
   <p>{{database}}</p>
   </div>
 
-  <button ng-click="togsec('section6')">Others</button>
+  <md-button class="md-raised md-primary" ng-click="togsec('section6')">Others</md-button>
   <div ng-if="showsec.section6">
   <p>{{others}}</p>
 </div>
